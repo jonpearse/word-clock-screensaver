@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <style media="screen">
+      body {
+        overflow: hidden;
+        
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        
+        height: 100vh;
+        width: 100vw;
+        background: #000;
+      }
+      
+      main {
+        display: grid;
+        grid-template: repeat(8, 1fr) / repeat(13, 1fr);
+        height: 50vh;
+        width:  50vh;
+      }
+            
+      aside {
+        display: flex;
+        justify-content: center;
+      }
+      
+      aside span { margin: .5em .4em; }
+      
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #111;
+        font: 100 3.5vh 'Gill Sans';
+      }
+      
+      span.-on,
+      span.c { color: #FFF; }
+      
+      @media ( orientation: portrait )
+      {
+        main {
+          height: 50vw;
+          width:  50vw;
+        }
+        
+        span { font-size: 3.5vw; }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <span class="c">I</span>
+      <span class="c">T</span>
+      <span>J</span>
+      <span class="c">I</span>
+      <span class="c">S</span>
+      <span>D</span>
+      <span class="m3">Q</span>
+      <span class="m3">U</span>
+      <span class="m3">A</span>
+      <span class="m3">R</span>
+      <span class="m3">T</span>
+      <span class="m3">E</span>
+      <span class="m3">R</span>
+      <span>P</span>
+      <span class="m4 m5">T</span>
+      <span class="m4 m5">W</span>
+      <span class="m4 m5">E</span>
+      <span class="m4 m5">N</span>
+      <span class="m4 m5">T</span>
+      <span class="m4 m5">Y</span>
+      <span class="m5">-</span>
+      <span class="m1 m5">F</span>
+      <span class="m1 m5">I</span>
+      <span class="m1 m5">V</span>
+      <span class="m1 m5">E</span>
+      <span>M</span>
+      <span class="m2">T</span>
+      <span class="m2">E</span>
+      <span class="m2">N</span>
+      <span class="m6">H</span>
+      <span class="m6">A</span>
+      <span class="m6">L</span>
+      <span class="m6">F</span>
+      <span class="j1">T</span>
+      <span class="j1">O</span>
+      <span class="j0">P</span>
+      <span class="j0">A</span>
+      <span class="j0">S</span>
+      <span class="j0">T</span>
+      <span class="h1">O</span>
+      <span class="h1">N</span>
+      <span class="h1">E</span>
+      <span class="h4">F</span>
+      <span class="h4">O</span>
+      <span class="h4">U</span>
+      <span class="h4">R</span>
+      <span class="h11">E</span>
+      <span class="h11">L</span>
+      <span class="h11">E</span>
+      <span class="h11">V</span>
+      <span class="h11">E</span>
+      <span class="h11">N</span>
+      <span class="h0">T</span>
+      <span class="h0">W</span>
+      <span class="h0">E</span>
+      <span class="h0">L</span>
+      <span class="h0">V</span>
+      <span class="h0">E</span>
+      <span class="h6">S</span>
+      <span class="h6">I</span>
+      <span class="h6">X</span>
+      <span class="h5">F</span>
+      <span class="h5">I</span>
+      <span class="h5">V</span>
+      <span class="h5">E</span>
+      <span class="h7">S</span>
+      <span class="h7">E</span>
+      <span class="h7">V</span>
+      <span class="h7">E</span>
+      <span class="h7">N</span>
+      <span class="h2">T</span>
+      <span class="h2">W</span>
+      <span class="h2">O</span>
+      <span class="h8">E</span>
+      <span class="h8">I</span>
+      <span class="h8">G</span>
+      <span class="h8">H</span>
+      <span class="h8">T</span>
+      <span class="h10">T</span>
+      <span class="h10">E</span>
+      <span class="h10">N</span>
+      <span class="h3">T</span>
+      <span class="h3">H</span>
+      <span class="h3">R</span>
+      <span class="h3">E</span>
+      <span class="h3">E</span>
+      <span>M</span>
+      <span class="h9">N</span>
+      <span class="h9">I</span>
+      <span class="h9">N</span>
+      <span class="h9">E</span>
+      <span class="m0">O</span>
+      <span class="m0">’</span>
+      <span class="m0">C</span>
+      <span class="m0">L</span>
+      <span class="m0">O</span>
+      <span class="m0">C</span>
+      <span class="m0">K</span>
+      <span>X</span>
+      <span>I</span>
+      <span class="a0">A</span>
+      <span class="a0">M</span>
+      <span class="a1">P</span>
+      <span class="a1">M</span>
+    </main>
+    <aside>
+      <span>•</span>
+      <span>•</span>
+      <span>•</span>
+      <span>•</span>
+    </aside>
+    <script>
+      const MINUTE_MAP = [ 0, 1, 2, 3, 4, 5, 6, 5, 4, 3, 2, 1 ];
+    
+      const acquire = ( sSel, iNum ) =>
+      {
+        const aRet = [];
+        for (let i = 0; i < iNum; i++)
+        {
+          aRet.push( document.querySelectorAll( `.${sSel}${i}` ))
+        }
+        return aRet;
+      }
+      
+      const allOff = () => document.querySelectorAll( 'span' ).forEach( el => el.classList.remove( '-on' ));
+      const setOn = nl => nl.forEach( el => el.classList.add( '-on' ));
+      
+      const tick = () =>
+      {
+        const oNow = new Date();
+        allOff();
+                
+        // minutes are a bit complicated
+        const iMinute = oNow.getMinutes();
+        const iPastTo = ( iMinute > 34 ) ? 1 : 0;
+        const iMinMap = Math.floor( iMinute / 5 );
+        setOn( aMinute[ MINUTE_MAP[ iMinMap ]]);
+        if (iMinMap > 0)
+        {
+          setOn( aPastTo[ iPastTo ]);
+        }
+        
+        // hours are easier but require a twiddle…
+        const iHour = oNow.getHours() + iPastTo;
+        const iAmPm = ( iHour >= 12 ) ? 1 : 0;
+        setOn( aHour[ iHour % 12 ]);
+        setOn( aAmPm[ iAmPm ]);
+        
+        // dots
+        for ( let i = 0; i < ( iMinute % 5 ); i++ )
+        {
+          aDots[i].classList.add( '-on' );
+        }
+      }
+      
+      const aHour = acquire( 'h', 12 );
+      const aMinute = acquire( 'm', 7 );
+      const aPastTo = acquire( 'j', 2 );
+      const aAmPm = acquire( 'a', 2 );
+      const aDots = document.querySelectorAll( 'aside span' );
+      
+      tick();
+      setInterval( tick, 1000 );
+    
+    </script>
+  </body>
+</html>
